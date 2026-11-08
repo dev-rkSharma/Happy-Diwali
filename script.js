@@ -55,7 +55,6 @@ if (recipient && recipient.trim()) {
   const name = recipient.trim().slice(0, 40);
   $('recipient').textContent = `For you, ${name}`;
   $('recipient').hidden = false;
-  $('name').value = name;
 }
 function resize() {
   width = innerWidth; height = innerHeight;
