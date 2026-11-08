@@ -62,6 +62,19 @@ if (recipient && recipient.trim()) {
   const name = recipient.trim().slice(0, 40);
   $('recipient').textContent = `For you, ${name}`;
   $('recipient').hidden = false;
+  const wish = $('family-wish');
+  wish.replaceChildren();
+  const lines = [
+    `${name}, wishing you and your family a joyful and blessed Diwali.`,
+    'May every diya bring warmth to your home,',
+    'every spark light up a new hope,',
+    'and the year ahead bring good health, peace, and prosperity.',
+    'May your happiest moments be the ones you share together.'
+  ];
+  lines.forEach((line, index) => {
+    if (index) wish.appendChild(document.createElement('br'));
+    wish.appendChild(document.createTextNode(line));
+  });
 }
 function resize() {
   width = innerWidth; height = innerHeight;
@@ -148,7 +161,7 @@ $('share-form').addEventListener('submit', async (event) => {
   const name = $('name').value.trim();
   url.search = ''; url.hash = '';
   if (name) url.searchParams.set('to', name);
-  const text = `${name ? `${name}, wishing` : 'Wishing'} you a Happy Diwali! 🪔 May your days be filled with love and light.`;
+  const text = `${name ? `${name}, wishing` : 'Wishing'} you and your family a joyful and blessed Diwali! 🪔 May your home be filled with love and light, and the year ahead bring good health, peace, and prosperity.`;
   if (location.protocol === 'file:') {
     $('share-status').textContent = 'Publish on GitHub Pages first, then share your live wish here.';
     return;
