@@ -62,19 +62,6 @@ if (recipient && recipient.trim()) {
   const name = recipient.trim().slice(0, 40);
   $('recipient').textContent = `For you, ${name}`;
   $('recipient').hidden = false;
-  const wish = $('family-wish');
-  wish.replaceChildren();
-  const lines = [
-    `${name}, wishing you and your family a joyful and blessed Diwali.`,
-    'May every diya bring warmth to your home,',
-    'every spark light up a new hope,',
-    'and the year ahead bring good health, peace, and prosperity.',
-    'May your happiest moments be the ones you share together.'
-  ];
-  lines.forEach((line, index) => {
-    if (index) wish.appendChild(document.createElement('br'));
-    wish.appendChild(document.createTextNode(line));
-  });
 }
 function resize() {
   width = innerWidth; height = innerHeight;
