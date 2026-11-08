@@ -51,6 +51,13 @@ for (let i = 0; i < 23; i++) {
   document.querySelector('.garland').appendChild(bulb);
 }
 const recipient = new URLSearchParams(location.search).get('to');
+// Start a fresh outgoing wish, even when the browser restores form values.
+function resetSharingField() {
+  $('name').value = '';
+  $('share-status').textContent = '';
+}
+resetSharingField();
+window.addEventListener('pageshow', resetSharingField);
 if (recipient && recipient.trim()) {
   const name = recipient.trim().slice(0, 40);
   $('recipient').textContent = `For you, ${name}`;

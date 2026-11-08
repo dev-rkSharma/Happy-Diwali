@@ -8,7 +8,7 @@
   <title>A little light, just for you · Happy Diwali</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='52' font-size='52'%3E🪔%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <script src="script.js?v=empty-share-2" defer></script>
 </head>
 <body>
   <canvas id="fireworks" aria-hidden="true"></canvas>
@@ -153,7 +153,7 @@
     </section>
     <section class="share-card" aria-labelledby="share-title">
       <div><p class="eyebrow">LET THE GOOD WISHES TRAVEL</p><h2 id="share-title">Pass a little light along.</h2><p>Add a name and send someone their own Diwali wish.</p></div>
-      <form id="share-form"><label for="name">Their first name <span>(optional)</span></label><div class="input-row"><input id="name" name="name" maxlength="40" placeholder="Someone special" autocomplete="off"><button type="submit">Share wish <span aria-hidden="true">↗</span></button></div><p id="share-status" role="status" aria-live="polite"></p></form>
+      <form id="share-form" autocomplete="off"><label for="name">Their first name <span>(optional)</span></label><div class="input-row"><input id="name" name="wish-recipient" type="text" value="" maxlength="40" placeholder="Someone special" autocomplete="off"><button type="submit">Share wish <span aria-hidden="true">↗</span></button></div><p id="share-status" role="status" aria-live="polite"></p></form>
     </section>
   </main>
   <footer>Made with warmth. Shared with love. <span aria-hidden="true">✦</span><span>Wishing you & your loved ones a beautiful Diwali.</span></footer>
