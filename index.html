@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#160e25">
+  <meta name="description" content="A little light, a little magic, and a heartfelt Diwali wish just for you.">
+  <title>A little light, just for you · Happy Diwali</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='52' font-size='52'%3E🪔%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <canvas id="fireworks" aria-hidden="true"></canvas>
+  <div class="ambient" aria-hidden="true"></div>
+  <header>
+    <a class="brand" href="./" aria-label="Diwali wishes home"><span>✦</span> THE FESTIVAL OF LIGHTS</a>
+    <button id="motion" class="small-button" type="button" aria-pressed="false">Pause magic</button>
+  </header>
+  <main>
+    <div class="garland" aria-hidden="true"><div class="wire"></div></div>
+    <section class="greeting" aria-labelledby="title">
+      <p class="eyebrow"><span></span> A LITTLE LIGHT, JUST FOR YOU <span></span></p>
+      <p class="recipient" id="recipient" hidden></p>
+      <h1 id="title"><span>Happy</span>Diwali<span class="title-star" aria-hidden="true">✧</span></h1>
+      <p class="hindi" lang="hi">शुभ दीपावली</p>
+      <p class="message">May your home glow with happiness,<br>your heart sparkle with love,<br>and your year be filled with beautiful beginnings.</p>
+      <button id="celebrate" class="primary-button" type="button"><span aria-hidden="true">✦</span> Light up the sky <span aria-hidden="true">↗</span></button>
+      <p class="hint">A little sparkle awaits. Make a wish.</p>
+    </section>
+    <section class="festival-art" aria-label="An illuminated rangoli surrounded by glowing diyas">
+      <div class="art-halo" aria-hidden="true"></div>
+      <svg class="rangoli" viewBox="0 0 600 600" role="img" aria-label="A colorful floral rangoli in gold, pink and teal">
+        <defs>
+          <g id="petal"><path d="M300 286 C240 238 247 173 300 135 C353 173 360 238 300 286Z" fill="#d85576" stroke="#f9ba72" stroke-width="2"/><path d="M300 267 C278 225 280 192 300 167 C320 192 322 225 300 267Z" fill="#f6a854"/><circle cx="300" cy="148" r="4" fill="#fff0bd"/></g>
+          <g id="outer"><path d="M300 110 Q263 70 300 38 Q337 70 300 110" fill="#287c83" stroke="#75bdaf" stroke-width="2"/><circle cx="300" cy="25" r="5" fill="#f5bb6b"/><path d="M300 102L300 55" stroke="#e6cc88" stroke-width="2"/></g>
+        </defs>
+        <circle cx="300" cy="300" r="262" fill="none" stroke="#dc9a56" stroke-width="2" stroke-dasharray="2 13"/>
+        <circle cx="300" cy="300" r="228" fill="none" stroke="#dc9a56" stroke-width="2"/>
+        <circle cx="300" cy="300" r="212" fill="none" stroke="#dc9a56" stroke-width="9" stroke-dasharray="2 12"/>
+        <g id="outer-petals"></g><g id="inner-petals"></g>
+        <circle cx="300" cy="300" r="74" fill="#173e44" stroke="#f3b86c" stroke-width="3"/>
+        <circle cx="300" cy="300" r="60" fill="none" stroke="#6ab4a3" stroke-width="5" stroke-dasharray="2 8"/>
+        <circle cx="300" cy="300" r="43" fill="#ae3858" stroke="#f3b86c" stroke-width="2"/>
+        <path d="M300 266L310 289L334 300L310 311L300 334L290 311L266 300L290 289Z" fill="#ffc982"/>
+        <circle cx="300" cy="300" r="10" fill="#fff1bf"/>
+      </svg>
+      <div class="diya diya-main" aria-hidden="true"><div class="flame"></div><div class="wick"></div><div class="bowl"></div></div>
+      <div class="diya diya-left" aria-hidden="true"><div class="flame"></div><div class="wick"></div><div class="bowl"></div></div>
+      <div class="diya diya-right" aria-hidden="true"><div class="flame"></div><div class="wick"></div><div class="bowl"></div></div>
+      <span class="art-caption">LOVE. LIGHT. NEW BEGINNINGS.</span>
+    </section>
+    <section class="homecoming" aria-labelledby="homecoming-title">
+      <p class="eyebrow">THE NIGHT AYODHYA SHONE WITH JOY</p>
+      <h2 id="homecoming-title">A homecoming of light.</h2>
+      <p class="homecoming-message">Lord Ram, Mata Sita &amp; Lakshman return to Ayodhya.<br>A thousand lamps welcome them home.</p>
+      <div class="ayodhya-scene">
+        <svg viewBox="0 0 1000 580" role="img" aria-labelledby="scene-title scene-description">
+          <title id="scene-title">The return to Ayodhya</title>
+          <desc id="scene-description">An animated, stylized illustration of Lord Ram with a bow, Mata Sita in a red sari, and Lakshman with a bow, approaching an illuminated Ayodhya palace. Diyas flicker along their path, petals fall, and fireworks bloom above the city.</desc>
+          <defs>
+            <linearGradient id="night" x2="0" y2="1"><stop stop-color="#19132f"/><stop offset="1" stop-color="#482139"/></linearGradient>
+            <linearGradient id="palace-gold" x2="0" y2="1"><stop stop-color="#cfa56e"/><stop offset="1" stop-color="#70503d"/></linearGradient>
+            <linearGradient id="road" x2="0" y2="1"><stop stop-color="#ad7753" stop-opacity=".12"/><stop offset="1" stop-color="#efb879" stop-opacity=".28"/></linearGradient>
+            <radialGradient id="moon-glow"><stop stop-color="#f4d599" stop-opacity=".28"/><stop offset="1" stop-color="#f4d599" stop-opacity="0"/></radialGradient>
+            <g id="palace-tower">
+              <path d="M-32 0V-104H32V0" fill="url(#palace-gold)" stroke="#edbd7d" stroke-opacity=".6"/>
+              <path d="M-44-105Q-38-124-24-131Q-22-153 0-172Q22-153 24-131Q38-124 44-105Z" fill="#9c6a50" stroke="#efc486" stroke-width="2"/>
+              <path d="M0-172V-199M0-199L24-190L0-183" fill="#ef956a" stroke="#efc486" stroke-width="2"/>
+              <path d="M-8-23V-64Q0-80 8-64V-23Z" fill="#ffcf85"/>
+              <path d="M-25-93H25M-25-87H25" stroke="#ebc28b" stroke-width="2"/>
+              <circle cx="-25" cy="-9" r="2" fill="#ffe3a0"/><circle cx="25" cy="-9" r="2" fill="#ffe3a0"/>
+            </g>
+            <g id="scene-lamp"><ellipse cy="5" rx="18" ry="7" fill="#f9be67" opacity=".12"/><path d="M-10 0Q0 15 10 0Z" fill="#c87c46" stroke="#efba77"/><path class="scene-flame" d="M0 0Q-7-6 0-17Q8-6 0 0" fill="#ffdc8c"/><circle cy="-5" r="2" fill="#fff7d8"/></g>
+            <g id="scene-spark"><path d="M0-47V-68M0 47V68M-47 0H-68M47 0H68M-33-33L-48-48M33 33L48 48M33-33L48-48M-33 33L-48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle r="35" fill="none" stroke="currentColor" stroke-width="4" stroke-dasharray="1 15"/><circle r="76" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="1 28"/></g>
+          </defs>
+          <rect width="1000" height="580" fill="url(#night)"/>
+          <circle cx="720" cy="110" r="130" fill="url(#moon-glow)"/><circle cx="720" cy="110" r="29" fill="#f2d6a2" opacity=".85"/>
+          <g fill="#f5daac" opacity=".55"><circle cx="100" cy="95" r="1.7"/><circle cx="270" cy="52" r="2"/><circle cx="410" cy="112" r="1.4"/><circle cx="595" cy="44" r="1.8"/><circle cx="865" cy="65" r="2"/><circle cx="937" cy="167" r="1.4"/><circle cx="56" cy="198" r="2"/><circle cx="340" cy="173" r="1.5"/></g>
+          <g transform="translate(180 125)" style="color:#f5c27a"><use class="scene-burst burst-one" href="#scene-spark"/></g>
+          <g transform="translate(850 170)" style="color:#f093aa"><use class="scene-burst burst-two" href="#scene-spark"/></g>
+          <g transform="translate(455 80)" style="color:#8ccec0"><use class="scene-burst burst-three" href="#scene-spark"/></g>
+          <path d="M0 349V311H34V278H63V301H97V268H129V312H165V290H213V327H788V295H835V272H867V307H899V279H937V310H971V291H1000V349Z" fill="#392538" stroke="#a57b6044"/>
+          <g class="palace">
+            <path d="M260 353V252H740V353Z" fill="#85573f" stroke="#d6a16c"/>
+            <path d="M303 352V220H697V352" fill="url(#palace-gold)" stroke="#e1b07b"/>
+            <use href="#palace-tower" transform="translate(275 353) scale(.85)"/><use href="#palace-tower" transform="translate(725 353) scale(.85)"/>
+            <use href="#palace-tower" transform="translate(360 353) scale(1.05)"/><use href="#palace-tower" transform="translate(640 353) scale(1.05)"/>
+            <path d="M419 353V208H581V353" fill="#aa7650" stroke="#f0c38a" stroke-width="2"/>
+            <path d="M406 209Q417 169 454 154Q465 120 500 92Q535 120 546 154Q583 169 594 209Z" fill="#b58559" stroke="#efc486" stroke-width="2"/>
+            <path d="M500 93V58M500 58L535 69L500 79" fill="#e78d55" stroke="#efc486" stroke-width="2"/>
+            <path d="M466 353V286Q500 233 534 286V353" fill="#301e2e" stroke="#f6c880" stroke-width="3"/>
+            <path d="M480 353V292Q500 259 520 292V353" fill="#f1bd7025"/>
+            <g fill="#ffd58c"><path d="M314 307V274Q323 260 332 274V307Z"/><path d="M382 307V274Q391 260 400 274V307Z"/><path d="M601 307V274Q610 260 619 274V307Z"/><path d="M668 307V274Q677 260 686 274V307Z"/><path d="M445 249V225Q452 215 459 225V249Z"/><path d="M541 249V225Q548 215 555 225V249Z"/></g>
+            <path d="M305 230Q500 287 695 230M272 319Q500 367 728 319" fill="none" stroke="#e6b276" stroke-width="2"/>
+            <g id="palace-lights"></g>
+          </g>
+          <path d="M0 354Q500 332 1000 354V580H0Z" fill="#20172a"/>
+          <path d="M475 354H525L810 580H190Z" fill="url(#road)"/>
+          <path d="M472 360L175 580M528 360L825 580" stroke="#c3976750" fill="none"/>
+          <g id="welcome-lamps"></g>
+          <g class="arrival-procession">
+            <ellipse cx="500" cy="512" rx="153" ry="17" fill="#0e0b1c" opacity=".4"/>
+            <!-- Lakshman: saffron robes, bow and a quiver. -->
+            <g transform="translate(392 505)"><g class="figure figure-lakshman">
+              <circle cy="-126" r="40" fill="#f9c47e" opacity=".07"/><circle cy="-126" r="31" fill="none" stroke="#e5b776" opacity=".3"/>
+              <path d="M-24-114L-35-163M-17-115L-28-163M-10-115L-21-160" stroke="#cba079" stroke-width="3"/><path d="M-30-102L-36-144L-15-148L-9-104" fill="#684a35" stroke="#c89764"/>
+              <path class="walking-leg leg-one" d="M-12-37L-17-3H-5L3-37" fill="#d9a070"/><path class="walking-leg leg-two" d="M5-37L7-3H20L19-37" fill="#d9a070"/>
+              <path d="M-20-108Q0-119 20-108L27-43Q0-26-28-43Z" fill="#df9449" stroke="#f4bc75"/>
+              <path d="M-19-68L-29-27Q0-17 26-28L19-68" fill="#f1b65a"/><path d="M-18-104L18-57" stroke="#ffda8d" stroke-width="9"/>
+              <path d="M-20-101L-34-64L-43-77M21-100L34-65" fill="none" stroke="#d9a070" stroke-width="9" stroke-linecap="round"/>
+              <path d="M-43-127Q-75-80-43-32M-43-127V-32" fill="none" stroke="#edbf77" stroke-width="3"/>
+              <path d="M-15-132Q-24-154 0-155Q25-155 17-127" fill="#2d2029"/>
+              <ellipse cy="-125" rx="17" ry="22" fill="#dca574"/><path d="M-17-139Q0-157 17-139" fill="#30212a"/><circle cy="-159" r="8" fill="#30212a"/>
+              <path d="M-7-126H-3M5-126H9" stroke="#43292c" stroke-width="2" stroke-linecap="round"/><path d="M-3-116Q1-113 5-116" fill="none" stroke="#8c4b3b"/><path d="M0-137V-130" stroke="#b83d35" stroke-width="2"/>
+              <path d="M-11-103Q0-88 13-103" fill="none" stroke="#ffdc8a" stroke-width="3"/>
+            </g></g>
+            <!-- Mata Sita: a red sari with a gold border and veil. -->
+            <g transform="translate(500 510)"><g class="figure figure-sita">
+              <circle cy="-134" r="42" fill="#f9c47e" opacity=".08"/><circle cy="-134" r="33" fill="none" stroke="#e5b776" opacity=".35"/>
+              <path d="M-10-24L-12-3H-2L3-24M8-24L8-3H19L19-24" fill="#e3ac86"/>
+              <path class="sita-sari" d="M-20-111Q0-121 20-111L35-11Q0 4-36-11Z" fill="#af3e5f" stroke="#edb775" stroke-width="2"/>
+              <path d="M-18-145Q0-170 20-145L28-77L12-99L-17-104L-30-74Z" fill="#ca5d73" stroke="#efbe7d" stroke-width="2"/>
+              <ellipse cy="-132" rx="16" ry="21" fill="#e7b18a"/><path d="M-16-142Q0-157 16-142L13-149Q0-162-13-149Z" fill="#33212b"/>
+              <path d="M-15-149L-12-165L-5-157L0-171L6-157L13-165L16-149Z" fill="#e9b768"/><circle cy="-156" r="3" fill="#e45c70"/>
+              <path d="M-7-133H-3M4-133H8" stroke="#573136" stroke-width="2" stroke-linecap="round"/><circle cy="-141" r="2" fill="#a82b47"/><path d="M-4-122Q0-119 4-122" fill="none" stroke="#a65051"/>
+              <path d="M-21-104L-7-78L0-85M21-104L8-78L0-85" fill="none" stroke="#e7b18a" stroke-width="8" stroke-linecap="round"/>
+              <path d="M-17-106L24-33L31-11M-31-12Q0 0 31-12" fill="none" stroke="#f2c57e" stroke-width="5"/>
+              <g fill="#f3c477"><circle cx="-16" cy="-129" r="3"/><circle cx="16" cy="-129" r="3"/><circle cy="-101" r="4"/><circle cx="-13" cy="-48" r="2"/><circle cx="1" cy="-31" r="2"/><circle cx="-17" cy="-22" r="2"/><circle cx="10" cy="-50" r="2"/></g>
+            </g></g>
+            <!-- Lord Ram: blue complexion, gold crown, bow and yellow robes. -->
+            <g transform="translate(610 500)"><g class="figure figure-ram">
+              <circle cy="-140" r="46" fill="#f9c47e" opacity=".1"/><circle cy="-140" r="36" fill="none" stroke="#e5b776" opacity=".5"/>
+              <path d="M-20-115L-32-167M-12-116L-24-169M-4-116L-16-167" stroke="#d7b384" stroke-width="3"/><path d="M-27-100L-35-149L-13-153L-4-108" fill="#735036" stroke="#d4a56b"/>
+              <path class="walking-leg leg-one" d="M-12-39L-18-3H-5L2-39" fill="#78aeb9"/><path class="walking-leg leg-two" d="M5-39L9-3H22L19-39" fill="#78aeb9"/>
+              <path d="M-21-111Q0-122 21-111L24-63H-24Z" fill="#78aeb9"/><path d="M-22-68L-28-28Q0-13 28-28L22-68Z" fill="#f3c168" stroke="#fadd95" stroke-width="2"/>
+              <path d="M-16-114L17-64L28-26" fill="none" stroke="#ed9c56" stroke-width="12"/>
+              <path d="M-21-104L-35-68M22-104L40-78L45-91" fill="none" stroke="#78aeb9" stroke-width="10" stroke-linecap="round"/>
+              <path d="M46-151Q87-92 46-30M46-151V-30" fill="none" stroke="#f3c780" stroke-width="3"/>
+              <path d="M-18-136Q-25-162 0-164Q27-162 18-130L22-114L-22-114Z" fill="#24202b"/><ellipse cy="-137" rx="18" ry="23" fill="#86bbc5"/>
+              <path d="M-19-153L-16-172L-7-164L0-185L8-164L17-172L20-153Z" fill="#e9b969" stroke="#f6d28c" stroke-width="1.5"/><circle cy="-164" r="4" fill="#c75059"/>
+              <path d="M-8-138H-3M5-138H10" stroke="#263b4c" stroke-width="2" stroke-linecap="round"/><path d="M-4-126Q1-123 6-126" fill="none" stroke="#3c657a"/><path d="M-3-150L0-142L3-150" fill="none" stroke="#f7da9b" stroke-width="2"/>
+              <path d="M-13-110Q0-91 15-110" fill="none" stroke="#ffe0a1" stroke-width="4"/><g fill="#f1ddad"><circle cx="-9" cy="-96" r="3"/><circle cx="-5" cy="-87" r="3"/><circle cx="1" cy="-81" r="3"/><circle cx="7" cy="-87" r="3"/><circle cx="11" cy="-96" r="3"/></g>
+            </g></g>
+          </g>
+          <g id="welcome-petals" aria-hidden="true"></g>
+        </svg>
+        <div class="scene-labels" aria-hidden="true"><span>Lakshman</span><span>Mata Sita</span><span>Lord Ram</span></div>
+        <div class="fountain fountain-left" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><div class="fountain-base"></div></div>
+        <div class="fountain fountain-right" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><div class="fountain-base"></div></div>
+      </div>
+      <p class="homecoming-blessing" lang="hi">जय श्री राम · दीपों से जगमग अयोध्या</p>
+    </section>
+    <section class="share-card" aria-labelledby="share-title">
+      <div><p class="eyebrow">LET THE GOOD WISHES TRAVEL</p><h2 id="share-title">Pass a little light along.</h2><p>Add a name and send someone their own Diwali wish.</p></div>
+      <form id="share-form"><label for="name">Their first name <span>(optional)</span></label><div class="input-row"><input id="name" name="name" maxlength="40" placeholder="Someone special" autocomplete="off"><button type="submit">Share wish <span aria-hidden="true">↗</span></button></div><p id="share-status" role="status" aria-live="polite"></p></form>
+    </section>
+  </main>
+  <footer>Made with warmth. Shared with love. <span aria-hidden="true">✦</span><span>Wishing you & your loved ones a beautiful Diwali.</span></footer>
+</body>
+</html>
